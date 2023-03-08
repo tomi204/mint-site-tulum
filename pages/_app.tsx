@@ -10,7 +10,7 @@ import { Gnosis } from "@thirdweb-dev/chains";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={Gnosis}>
+    <ThirdwebProvider activeChain={"mumbai"}>
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
