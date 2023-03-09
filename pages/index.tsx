@@ -23,12 +23,6 @@ const Home: NextPage = () => {
       <main className="flex flex-col w-full items-center justify-center">
         <NFT />
       </main>
-
-      <footer className={styles.footer}>
-        <a href="https://rainbow.me" rel="noopener noreferrer" target="_blank">
-          Made with by
-        </a>
-      </footer>
     </div>
   );
 };

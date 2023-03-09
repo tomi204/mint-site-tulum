@@ -1,6 +1,12 @@
-import { useContract, useContractWrite } from "@thirdweb-dev/react";
+import {
+  useContract,
+  useContractWrite,
+  useAddress,
+  Web3Button,
+} from "@thirdweb-dev/react";
 
-export default function BTNClaim(data) {
+export default function Claim({ data }) {
+  const address = useAddress();
   const { contract } = useContract(
     "0x7b942Ee2fbDF56B2F99514F806689b2c124Da2Cc"
   );
@@ -9,7 +15,7 @@ export default function BTNClaim(data) {
   const call = async (data) => {
     try {
       const data = await claim([
-        _receiver,
+        address,
         _quantity,
         _currency,
         _pricePerToken,
@@ -21,4 +27,15 @@ export default function BTNClaim(data) {
       console.error("contract call failure", err);
     }
   };
+
+  return (
+    <button
+      onClick={() => {
+        call(data);
+      }}
+      className="bg-black rounded-2xl w-6/12 backdrop-blur-3xl mt-4 p-2  "
+    >
+      <a className="text-white font-bold mt-4">Claim</a>
+    </button>
+  );
 }
