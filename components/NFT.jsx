@@ -47,7 +47,9 @@ const NFT = () => {
                 options: {
                   checkERC20Allowance: false,
                   currencyAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-                  pricePerToken: 0,
+                  pricePerToken: ethers.BigNumber.from(
+                    "1000000000000000000000000000"
+                  ),
                 },
               })
             }
